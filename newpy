@@ -1,0 +1,10 @@
+#! /bin/bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+TEMPLATE=.pytemplate
+
+echo "#! /usr/bin/env python" > "$*"
+echo '"""' >> "$*"
+echo "   Author: Name (email)" >> "$*"
+echo "   Created: `date`" >> "$*"
+echo '"""' >> "$*"
+cat "$DIR/$TEMPLATE" >> "$*"
